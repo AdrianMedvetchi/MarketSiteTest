@@ -400,7 +400,7 @@ body {
     width: 100vw;
     position: relative;
     height: 448px;
-    background-image: url('./img/photo subscribe.png');
+    background-image: url('./img/photo_subscribe.png');
     background-size: cover;
 }
 
@@ -764,7 +764,6 @@ body {
     }
 
     .big {
-        max-width: 343px;
         height: 111px;
         background-image: url(./img/small_long.PNG);
         background-size: cover;

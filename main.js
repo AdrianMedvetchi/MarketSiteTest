@@ -68,15 +68,22 @@ document.addEventListener("DOMContentLoaded", function() {
       const pathElement = document.querySelector('.background.big .svg-path');
       const screenWidth = window.innerWidth;
 
-      if (screenWidth <= 425) {
-          svgElement.setAttribute('viewBox', '0 0 343 111');
-          pathElement.setAttribute('d', 'M343 0H0V111H343V0Z');
+      if (svgElement && pathElement) {
+          if (screenWidth <= 425) {
+              svgElement.setAttribute('width', '343')
+              svgElement.setAttribute('height', '111');
+              svgElement.setAttribute('viewBox', '0 0 343 111');
+              pathElement.setAttribute('d', 'M343 0H0V111H343V0Z');
+          } else {
+              svgElement.setAttribute('viewBox', '0 0 1140 180');
+              pathElement.setAttribute('d', 'M1140 0H0V180H1140V0Z');
+          }
       } else {
-          svgElement.setAttribute('viewBox', '0 0 1140 180');
-          pathElement.setAttribute('d', 'M1140 0H0V180H1140V0Z');
+          console.error("SVG or path element not found.");
       }
   }
 
   window.addEventListener('resize', updateSVG);
-  updateSVG(); // Initial call to set the correct values on page load
+  updateSVG();
 });
+
