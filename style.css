@@ -766,6 +766,9 @@ body {
     .big {
         max-width: 343px;
         height: 111px;
+        background-image: url(./img/small_long.PNG);
+        background-size: cover;
+        background-position: center;
     }
 
     .category_description {
@@ -775,7 +778,7 @@ body {
     
     .category_description_accesories {
         width: 200px;
-        transform: translate(71.5px, 20.5px)
+        transform: translate(71.5px, 31.5px)
     }
 
     .products {

@@ -61,3 +61,22 @@ newData.forEach(element => {
                 </div>
             `);
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  function updateSVG() {
+      const svgElement = document.querySelector('.background.big');
+      const pathElement = document.querySelector('.background.big .svg-path');
+      const screenWidth = window.innerWidth;
+
+      if (screenWidth <= 425) {
+          svgElement.setAttribute('viewBox', '0 0 343 111');
+          pathElement.setAttribute('d', 'M343 0H0V111H343V0Z');
+      } else {
+          svgElement.setAttribute('viewBox', '0 0 1140 180');
+          pathElement.setAttribute('d', 'M1140 0H0V180H1140V0Z');
+      }
+  }
+
+  window.addEventListener('resize', updateSVG);
+  updateSVG(); // Initial call to set the correct values on page load
+});
